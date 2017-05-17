@@ -71,11 +71,11 @@ namespace Statistics
 			var table = new SqlTable("Statistics",
 				new SqlColumn("UserID", MySqlDbType.Int32),
 				new SqlColumn("Time", MySqlDbType.Int32),
-                new SqlColumn("Logins", MySqlDbType.Int32),
-                new SqlColumn("UserName", MySqlDbType.Text),
-                new SqlColumn("UserGroup", MySqlDbType.Text));
+                		new SqlColumn("Logins", MySqlDbType.Int32),
+                		new SqlColumn("UserName", MySqlDbType.Text),
+                		new SqlColumn("UserGroup", MySqlDbType.Text));
 
-            database.EnsureExists(table);
+            		database.EnsureExists(table);
 		}
 
 		private static void TimeSaverOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
@@ -98,8 +98,8 @@ namespace Statistics
 		private static void PlayerPostLogin(PlayerPostLoginEventArgs args)
 		{
 			database.CheckUpdateInclude(args.Player.User.ID);
-            TimeCache[args.Player.Index] = 0;
-        }
+            		TimeCache[args.Player.Index] = 0;
+        	}
 
 		private static void PlayerLeave(LeaveEventArgs args)
 		{
